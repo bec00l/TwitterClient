@@ -1,0 +1,60 @@
+﻿<meta http-equiv="Refresh" content="60">
+
+<div class="row">
+
+    <label>Filter</label><input id="tweetFilter" type="text" maxlength="12" />
+    <h2>Salesforce Latest Twitter Feed</h2>
+    <div id="tweetResults">
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $("#tweetFilter").keyup(function () {
+        filterResults();
+    });
+
+    function filterResults() {
+        var filterText = $("#tweetFilter").val();
+
+        if (!filterText) {
+            return getTweets();
+        }
+
+        else if (filterText.length >= 4) {
+            return getTweets(filterText);
+        }
+    }
+
+    function getTweets(filterText) {
+
+        if (!filterText)
+            filterText = '';
+
+        var uri = 'http://twitterfeedreaderserver20171030122158.azurewebsites.net/api/feed/10/salesforce';
+
+        if (filterText) {
+            uri += ('/' + filterText);
+        }
+        $.ajax({
+            url: uri,
+            cache: false,
+            success: function (data) {
+                $("#tweetResults").empty();
+                for (var i = 0; i < data.length; i += 1) {
+                    
+                    var tweetUrl = data[i].TweetUrl;
+                    var getEmbeddedTweet = 'https://publish.twitter.com/oembed?url=' + tweetUrl + '&callback=?';
+                    $.getJSON(getEmbeddedTweet, function (tweetHtmlContent) {
+                        if (tweetHtmlContent && tweetHtmlContent.html)
+                            $("#tweetResults").append(tweetHtmlContent.html);
+                    });
+                }
+            }
+        });
+    }
+
+    $(document).ready(function ($) {
+        getTweets();
+    });
+</script>
