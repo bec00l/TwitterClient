@@ -19,16 +19,15 @@
         var filterText = $("#tweetFilter").val();
 
         if (!filterText) {
-            return getTweets();
+            getTweets();
         }
-
-        else if (filterText.length >= 4) {
-            return getTweets(filterText);
+        else {
+           getTweets(filterText);
         }
     }
 
     function getTweets(filterText) {
-
+        $("#tweetResults").empty();
         if (!filterText)
             filterText = '';
 
@@ -41,7 +40,6 @@
             url: uri,
             cache: false,
             success: function (data) {
-                $("#tweetResults").empty();
                 for (var i = 0; i < data.length; i += 1) {
                     
                     var tweetUrl = data[i].TweetUrl;

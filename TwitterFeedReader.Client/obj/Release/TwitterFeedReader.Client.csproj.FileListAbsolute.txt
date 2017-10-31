@@ -64,3 +64,4 @@ C:\Users\dhurd\Documents\Visual Studio 2017\Projects\TwitterFeedReader.Client\Tw
 C:\Users\dhurd\Documents\Visual Studio 2017\Projects\TwitterFeedReader.Client\TwitterFeedReader.Client\bin\Microsoft.AI.Web.xml
 C:\Users\dhurd\Documents\Visual Studio 2017\Projects\TwitterFeedReader.Client\TwitterFeedReader.Client\obj\Release\TwitterFeedReader.Client.dll
 C:\Users\dhurd\Documents\Visual Studio 2017\Projects\TwitterFeedReader.Client\TwitterFeedReader.Client\obj\Release\TwitterFeedReader.Client.pdb
+C:\Users\dhurd\Documents\Visual Studio 2017\Projects\TwitterFeedReader.Client\TwitterFeedReader.Client\obj\Release\TwitterFeedReader.Client.csprojResolveAssemblyReference.cache
