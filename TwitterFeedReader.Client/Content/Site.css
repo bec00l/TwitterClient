@@ -22,3 +22,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#filterContainer {
+    margin : 10px 0;
+}
+
+#filterContainer label {
+    margin-right: 10px;
+}
+
+.navbar {
+    background-color: #1798c1;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
